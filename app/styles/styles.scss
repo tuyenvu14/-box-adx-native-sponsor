@@ -1,0 +1,61 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+
+@import "base/typography";
+
+
+  .container {
+    position: relative;
+    display: flex;
+    width: 40%;
+    margin: auto;
+    min-width: 420px;
+    height: 189px;
+    background-color: $backgroundColor;
+    &-image {
+      padding: 20px 0 23px 0;
+    }
+    &-description {
+      padding: 17px 5px 8px 20px;
+      &-close {
+        @include absolute("top_right");
+      }
+      &-next {
+        @include absolute("botton_right", 10px, 10px );
+        i {
+          color: $colorBlue;
+        }
+      }
+      &-title {
+        font-weight: $fontWeightTitle;
+        font-size: $fontSizeTitle;
+        line-height: $lineHeight;
+        color: $colorTitle;
+        @include maxLine(2);
+      }
+      &-link {
+        font-style: italic;
+        font-weight: $fontWeightLink;
+        font-size: $fontSizeLink;
+        color: $colorLink;
+        display: flex;
+        align-items: center;
+      }
+      &-content {
+        font-size: $fontSizeContent;
+        color: $colorContent;
+        @include maxLine(3)
+      }
+      &-logo {
+        margin-top: 22px;
+        font-size: $fontSizeLogo;
+        span:first-child {
+          font-weight: $fontWeightTitle;
+          color: $colorBlue;
+        }
+        span:last-child {
+          color: $colorLink;
+        }
+      }
+    }
+  }

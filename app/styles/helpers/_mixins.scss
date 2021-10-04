@@ -1,0 +1,20 @@
+@mixin maxLine($line) {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  @mixin absolute($direction: "top_right", $x: 0, $y: 0) {
+    position: absolute;
+    @if $direction == "top_right" {
+      top: $y;
+      right: $x;
+    }
+    @if $direction == "botton_right" {
+      bottom: $y;
+      right: $x;
+    }
+  }
